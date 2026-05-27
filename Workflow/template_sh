@@ -1,0 +1,7 @@
+#!/bin/bash
+#PBS -N xxx
+#PBS -l select=1:ncpus=128:mpiprocs=128
+#PBS -l walltime=08:00:00
+#PBS -A WYOM0200
+#PBS -j oe
+#PBS -q main
