@@ -1,22 +1,24 @@
  &time_control
- run_days                                = 80
+ run_days                            = 30,
  run_hours                           = 0,
  run_minutes                         = 0,
  run_seconds                         = 0,
- start_year                          = 2012, 2014, 2014, 2014
- start_month                         = 08,   08,   08, 08,
- start_day                           = 01,   01,   01, 01,
- start_hour                          = 00,   00,   00, 00,
- end_year                            = 2012, 2014,2014, 2014
- end_month                           = 12,   09,   09, 09,
- end_day                             = 01,   01,   01, 01,
- end_hour                            = 00,   00,   00, 00,
+ start_year                          = 2006, 2006, 2006, 2006
+ start_month                         = 12, 12, 12, 12,
+ start_day                           = 1, 1, 1, 1,
+ start_hour                          = 0, 0, 0, 0,
+
+ end_year                          = 1998, 2000, 2000, 2000
+ end_month                         = 8, 8, 8, 8,
+ end_day                           = 21, 1, 1, 1,
+ end_hour                          = 1, 0, 0, 0,
+
  interval_seconds                    = 21600
  input_from_file                     = .true.,.true.,.true.,.true.,
  history_interval                    = 360,  360,   360, 360,
- frames_per_outfile                  = 0, 1, 1, 1,
- restart                             = .false.,
- restart_interval                    = 14400,
+ frames_per_outfile                  = 1, 1, 1, 1,
+ restart                             = .true.,
+ restart_interval                    = 21600,
 
  write_hist_at_0h_rst                = .false.
  adjust_output_times                 = .true.,
@@ -27,14 +29,24 @@
  io_form_input                       = 2
  io_form_boundary                    = 2
 
- io_form_auxinput2		     = 2
-
  io_form_auxinput4                   = 2
  auxinput4_inname                    = "wrflowinp_d<domain>",
  auxinput4_interval_m                = 360, 360, 360, 360,
 
+ iofields_filename                   = "vario.txt",
+ ignore_iofields_warning             = .true.,
 
- auxhist22_outname = "auxhist_d<domain>_<date>",
+ auxhist14_outname                   = "wrf5min_d<domain>_<date>",
+ auxhist14_interval_m                = 5
+ frames_per_auxhist14                = 288
+ io_form_auxhist14                   = 2
+
+ auxhist13_outname                   = "wrf3d_d<domain>_<date>",
+ auxhist13_interval_m                = 360
+ frames_per_auxhist13                = 4
+ io_form_auxhist13                   = 2
+
+ auxhist22_outname = "wrf2d_d<domain>_<date>",
  auxhist22_interval = 60, 60, 60, 60
  frames_per_auxhist22 = 24, 24, 24, 24,
  io_form_auxhist22 = 2
@@ -73,7 +85,7 @@
  e_vert                              = 51,    30,    30,
 
  p_top_requested                     = 5000,
- num_metgrid_levels                  = 38,
+ num_metgrid_levels                  = 24,
  num_metgrid_soil_levels             = 4,
  sfcp_to_sfcp			     = .true.,
 
